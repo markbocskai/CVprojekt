@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bocskai Márk-László | CV & Portfólió</title>
+    
+    <meta name="description" content="Bocskai Márk-László informatikus hallgató (UMFST) szakmai önéletrajza és portfóliója. Szoftverfejlesztés, webfejlesztés és technológia.">
+    <meta name="keywords" content="Bocskai Márk-László, CV, portfólió, informatikus, C#, Java, Python, Flutter, webfejlesztés">
+    <meta name="author" content="Bocskai Márk-László">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <style>
+        :root {
+            --bg-color: #0f1117;
+            --surface-color: #161b22;
+            --surface-hover: #1f242d;
+            --accent-color: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --border-color: #30363d;
+            --card-radius: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .hero {
+            background-color: var(--surface-color);
+            padding: 80px 0 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p.subtitle {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .hero p.location {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            padding: 24px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #4b5563;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .card .institution {
+            color: var(--accent-color);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .card .date {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .skills-group {
+            margin-bottom: 24px;
+        }
+
+        .skills-group h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            border-color: var(--accent-color);
+            background-color: var(--accent-glow);
+            color: #ffffff;
+        }
+
+        .lang-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lang-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .lang-name {
+            font-weight: 500;
+        }
+
+        .lang-level {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            background-color: var(--accent-glow);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background-color: #2563eb;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        #form-status {
+            margin-top: 16px;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Bocskai Márk-László</h1>
+            <p class="subtitle">Informatikus hallgató (UMFST 2027) | Szoftverfejlesztő</p>
+            <p class="location">Erdély, Románia</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="about" class="fade-in">
+            <h2>Rólam</h2>
+            <p>Szenvedélyem a szoftverfejlesztés, a webes megoldások és a modern technológiák világa. Jelenleg az Universitatea de Medicină, Farmacie, Științe și Tehnologie „George Emil Palade” din Târgu Mureș informatikai szakos hallgatója vagyok. Gyakorlatias gondolkodásmóddal és folyamatos tanulási vággyal igyekszem innovatív projekteket megvalósítani.</p>
+        </section>
+
+        <section id="education" class="fade-in">
+            <h2>Tanulmányok</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Informatika (Licență)</h3>
+                    <p class="institution">UMFST „George Emil Palade” Târgu Mureș</p>
+                    <p class="date">2024 – 2027 (Várható végzés)</p>
+                    <p>Szoftverfejlesztés, algoritmusok, adatbázisok és hálózati architektúrák tanulmányozása.</p>
+                </div>
+                <div class="card">
+                    <h3>Tehnician desenator în construcții și instalații</h3>
+                    <p class="institution">Liceul Tehnologic "Constantin Brâncuși"</p>
+                    <p class="date">Középiskolai tanulmányok</p>
+                    <p>Műszaki rajz, struktúratervezés és precíziós műszaki alapok.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="fade-in">
+            <h2>Fejlesztői Készségek & Technológiák</h2>
+            
+            <div class="skills-group">
+                <h3>Programozási nyelvek & Keretrendszerek</h3>
+                <div class="tags-container">
+                    <span class="tag">C# (.NET / WinForms)</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">C++</span>
+                    <span class="tag">Flutter</span>
+                    <span class="tag">HTML5 & CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Firebase</span>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h3>Eszközök & Rendszerek</h3>
+                <div class="tags-container">
+                    <span class="tag">Git & GitHub</span>
+                    <span class="tag">Kali Linux</span>
+                    <span class="tag">Cisco Packet Tracer</span>
+                    <span class="tag">Ollama (Helyi AI)</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages" class="fade-in">
+            <h2>Nyelvtudás</h2>
+            <div class="grid-2">
+                <div class="lang-list">
+                    <div class="lang-item">
+                        <span class="lang-name">Magyar</span>
+                        <span class="lang-level">Anyanyelv</span>
+                    </div>
+                    <div class="lang-item">
+                        <span class="lang-name">Román</span>
+                        <span class="lang-level">Anyanyelv</span>
+                    </div>
+                </div>
+                <div class="lang-list">
+                    <div class="lang-item">
+                        <span class="lang-name">Angol</span>
+                        <span class="lang-level">B2 (Komplex nyelvvizsga)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="creative" class="fade-in">
+            <h2>Kreatív & Szoftveres Ismeretek</h2>
+            <div class="skills-group">
+                <div class="tags-container">
+                    <span class="tag">Adobe Photoshop</span>
+                    <span class="tag">Adobe InDesign</span>
+                    <span class="tag">FL Studio (Zenei alapok & Audio keverés)</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2>Kapcsolat</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Név</label>
+                    <input type="text" id="name" name="name" placeholder="Az Ön neve" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail cím</label>
+                    <input type="email" id="email" name="email" placeholder="email@pelda.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Üzenet</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Írja meg üzenetét..." required></textarea>
+                </div>
+                
+                <div class="g-recaptcha" 
+                     data-sitekey="6LeDPfItAAAAAAyhusoCn5-ie1ZWprmQMEcwVKiP" 
+                     data-size="invisible" 
+                     data-callback="onSubmit">
+                </div>
+                
+                <button type="submit" id="submit-btn" class="btn">Üzenet küldése</button>
+            </form>
+            <div id="form-status"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Bocskai Márk-László. Minden jog fenntartva.</p>
+    </footer>
+
+    <script>
+        (function() {
+            emailjs.init("hWrLom2PwocqqfhSW");
+        })();
+
+        const contactForm = document.getElementById('contact-form');
+        const statusDiv = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            grecaptcha.execute();
+        });
+
+        function onSubmit(token) {
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.innerText = "Küldés folyamatban...";
+            submitBtn.disabled = true;
+
+            emailjs.sendForm('service_or7svyq', 'template_izruzim', '#contact-form')
+                .then(function() {
+                    statusDiv.innerText = "Az üzenetet sikeresen elküldtük!";
+                    statusDiv.style.color = "#10b981"; 
+                    contactForm.reset();
+                    grecaptcha.reset();
+                }, function(error) {
+                    statusDiv.innerText = "Hiba történt a küldés során. Kérjük, próbálja újra.";
+                    statusDiv.style.color = "#ef4444"; 
+                    grecaptcha.reset();
+                })
+                .finally(function() {
+                    submitBtn.innerText = "Üzenet küldése";
+                    submitBtn.disabled = false;
+                });
+        }
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -40px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        fadeElements.forEach(el => {
+            appearOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
